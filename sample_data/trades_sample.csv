@@ -1,0 +1,4 @@
+time_open,time_close,symbol,side,volume,entry_price,exit_price,commission,swap,profit,sl_pips,mfe,mae
+2024-01-01 00:00:00,2024-01-01 00:10:00,XAUUSD,buy,0.1,1900,1901,0,0,1.5,50,2.0,-1.0
+2024-01-01 01:00:00,2024-01-01 01:05:00,XAUUSD,sell,0.1,1902,1901.5,0,0,-0.8,40,1.5,-0.5
+2024-01-01 02:00:00,2024-01-01 02:20:00,XAUUSD,buy,0.1,1901,1902.5,0,0,2.2,60,3.0,-1.5

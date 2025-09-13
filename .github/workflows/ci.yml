@@ -1,0 +1,17 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for .DS_Store
+        run: |
+          if git ls-files | grep -q '\.DS_Store'; then
+            echo '.DS_Store found'; exit 1; fi
+      - name: Check for CRLF
+        run: |
+          if git ls-files | grep -v '^backtests/' | xargs -r file | grep -E 'CRLF'; then
+            echo 'CRLF line endings found'; exit 1; fi
