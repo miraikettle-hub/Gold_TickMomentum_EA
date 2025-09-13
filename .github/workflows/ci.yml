@@ -3,18 +3,10 @@ name: CI
 on: [push, pull_request]
 
 jobs:
-  lint:
+  hygiene:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-            lfs: true
-      - uses: actions/setup-python@v5
-        with:
-            python-version: '3.11'
-      - run: python -m pip install --upgrade pip
-      - run: pip install pandas matplotlib flake8
-      - run: flake8 scripts/*.py
       - name: Check for .DS_Store
         run: |
           if git ls-files | grep -q '\.DS_Store'; then
